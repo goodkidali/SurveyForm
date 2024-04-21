@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta lang="en" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Survey Form</title>
+</head>
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Understanding our users</p>
+  <form id="survey-form" method="post">
+    <fieldset>
+      <label id="name-label" for="name">Name: <input id="name" type="text" placeholder="John Doe" required /></label>
+      <label id="email-label" for="email">Email: <input id="email" type="email" placeholder="JDoe@email.com" required /></label>
+      <label id="number-label" for="age">Age: <input id="number" type="number" required min="16" max="120" placeholder="16+" /></label>
+    </fieldset>
+    <fieldset>
+      <legend>Are you in school? (required)</legend>
+      <label for="in-school"><input class="inline" name="student" id="in-school" type="radio" checked value="1" /> Yes</label>
+      <label for="not-in-school"><input class="inline" name="student" id="not-in-school" type="radio" value="2" /> No</label>
+      <label class="dropdown" for="dropdown">What type of education? (If none, select "none")</label>
+        <select id="dropdown" name="education">
+          <option value="">none</option>
+          <option value="1">Highschool</option>
+          <option value="2">Bachelors</option>
+          <option value="3">Masters</option>
+          <option value="4">PhD</option>
+          <option value="5">Other</option>
+        </select>
+    </fieldset>
+    <fieldset>
+      <label for="sports">What sports are you interested in? (select all that apply)</label>
+        <label for="soccer">
+          <input class="inline" id="soccer" value="Soccer" type="checkbox"/> Soccer
+        </label>
+        <label for="basketball">
+          <input class="inline" value="Basketball" type="checkbox"/> Basketball
+        </label>
+        <label for="football">
+          <input class="inline" value="Football" type="checkbox"/> Football
+        </label>
+        <label for="rugby">
+          <input class="inline" value="Rugby" type="checkbox"/> Rugby
+        </label>
+        <label for="hockey">
+          <input class="inline" value="Hockey" type="checkbox"/> Hockey
+        </label>
+    </fieldset>
+    <fieldset>
+      <label for="comments">Leave any comments/suggestions here:
+        <textarea id="comments" name="comments" rows="3" cols="30" placeholder="I think that..."></textarea>
+    </fieldset>
+        <input id="submit" type="submit" value="Submit" onclick="return confirm('Submit form?')"/>
+  </form>
+</body>
